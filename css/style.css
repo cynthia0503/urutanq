@@ -101,6 +101,41 @@ img {
   left: 28%;
 }
 
+.product-card-link {
+  position: absolute;
+  z-index: 3;
+  width: 42.2%;
+  border-radius: 18px;
+}
+
+.product-card-link--left {
+  left: 6.7%;
+}
+
+.product-card-link--right {
+  right: 6.7%;
+}
+
+.image-section--17 .product-card-link {
+  top: 69.4%;
+  height: 11.7%;
+}
+
+.image-section--24 .product-card-link {
+  top: 71.4%;
+  height: 10.7%;
+}
+
+.image-section--28 .product-card-link {
+  top: 72.2%;
+  height: 10.7%;
+}
+
+.product-card-link:focus-visible {
+  outline: 3px solid #73a3e5;
+  outline-offset: 4px;
+}
+
 .site-footer {
   width: 100%;
   max-width: var(--content-width);
