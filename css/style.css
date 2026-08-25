@@ -4,6 +4,15 @@
   color-scheme: light;
   --content-width: 834px;
   --page-bg: #f6f5f4;
+  --campaign-cta-bottom: clamp(48px, 15vw, 125px);
+  --campaign-cta-bottom-tight: clamp(29px, 9vw, 75px);
+}
+
+@supports (container-type: inline-size) {
+  :root {
+    --campaign-cta-bottom: 15cqw;
+    --campaign-cta-bottom-tight: 9cqw;
+  }
 }
 
 *,
@@ -29,6 +38,7 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+  width: 100%;
 }
 
 a {
@@ -43,10 +53,14 @@ a {
   width: min(100%, var(--content-width));
   margin-inline: auto;
   overflow: hidden;
+  container-type: inline-size;
   background: #fff;
   box-shadow: 0 0 30px rgb(44 51 67 / 8%);
 }
 
+section{
+  width: 100%;
+}
 .image-section {
   position: relative;
   width: 100%;
@@ -56,6 +70,368 @@ a {
 
 .image-section > img {
   width: 100%;
+}
+
+.image-section > .section-overlay {
+  position: absolute;
+  z-index: 1;
+  width: var(--overlay-width);
+  height: auto;
+  max-width: none;
+  pointer-events: none;
+}
+
+.section-overlay.scroll-reveal {
+  opacity: 0;
+  transform: translate3d(0, clamp(24px, 5vw, 42px), 0);
+  transition:
+    opacity 1.5s ease-out var(--scroll-reveal-delay, 0ms),
+    transform 1.8s cubic-bezier(0.22, 1, 0.36, 1) var(--scroll-reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.section-overlay.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.section-overlay.scroll-reveal.is-reveal-complete {
+  will-change: auto;
+}
+
+.section-overlay--02-txt {
+  top: 2.5%;
+  left: 8.5%;
+  --overlay-width: 82.3%;
+  background-blend-mode: screen;
+}
+
+.section-overlay--03-txt {
+  top: 65.2%;
+  left: 6.3%;
+  --overlay-width: 89.7%;
+}
+
+.section-overlay--05-txt1 {
+  top: 2%;
+  left: 15.75%;
+  --overlay-width: 68.5%;
+}
+
+.section-overlay--05-txt2 {
+  top: 38%;
+  left: 23.65%;
+  --overlay-width: 52.7%;
+}
+
+.section-overlay--06-txt {
+  top: 28%;
+  right: -4%;
+  --overlay-width: 40%;
+}
+
+.image-section--07 {
+  isolation: isolate;
+}
+
+.image-section--07 > img:first-child {
+  position: relative;
+  z-index: 0;
+}
+
+.section-overlay--07-img {
+  top: 1%;
+  left: 0.2%;
+  --overlay-width: 99.6%;
+  z-index: 2;
+}
+
+.section-overlay--07-txt {
+  top: 15.5%;
+  left: 4%;
+  --overlay-width: 41.6%;
+  z-index: 3;
+}
+
+.section-overlay--moisture-s {
+  top: -10.5%;
+  left: 0;
+  --overlay-width: 32.5%;
+  z-index: 4;
+  animation: surface-tension-pulse 5s cubic-bezier(0.22, 0.61, 0.36, 1) -0.7s infinite;
+  transform-origin: 50% 68%;
+  will-change: transform;
+}
+
+.section-overlay--moisture-l {
+  top: 55%;
+  left: 0;
+  --overlay-width: 100%;
+  z-index: 1;
+  animation: surface-tension-pulse 5.8s cubic-bezier(0.22, 0.61, 0.36, 1) -2.1s infinite;
+  transform-origin: 68% 70%;
+  will-change: transform;
+}
+
+.image-section--09 {
+  isolation: isolate;
+}
+
+.image-section--09 > img:first-child {
+  position: relative;
+  z-index: 0;
+}
+
+.section-overlay--09-img {
+  top: 40.8%;
+  left: 1.85%;
+  --overlay-width: 96.3%;
+  z-index: 3;
+}
+
+.section-overlay--09-m1 {
+  top: 29%;
+  left: -5%;
+  --overlay-width: 16.7%;
+  animation: surface-tension-pulse 4.8s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
+  transform-origin: 50% 68%;
+  will-change: transform;
+}
+
+.section-overlay--09-m2 {
+  top: 39%;
+  right: -5%;
+  --overlay-width: 27.7%;
+  z-index: 1;
+  animation: surface-tension-pulse 5.2s cubic-bezier(0.22, 0.61, 0.36, 1) -1.5s infinite;
+  transform-origin: 50% 68%;
+  will-change: transform;
+}
+
+.section-overlay--10-m {
+  top: 58%;
+  left: 0;
+  --overlay-width: 100%;
+  animation: soft-float 4.8s ease-in-out infinite;
+  transform-origin: 50% 50%;
+  will-change: transform;
+}
+
+.section-overlay--10-txt1 {
+  top: 8%;
+  left: 8%;
+  --overlay-width: 72.7%;
+}
+
+.section-overlay--10-txt2 {
+  top: 60.5%;
+  left: 30.5%;
+  --overlay-width: 60.7%;
+}
+
+.section-overlay--12-img1,
+.section-overlay--12-img2,
+.section-overlay--12-img3 {
+  left: 4.55%;
+  --overlay-width: 90.9%;
+}
+
+.section-overlay--12-img1 {
+  top: 28.5%;
+}
+
+.section-overlay--12-img2 {
+  top: 52.5%;
+}
+
+.section-overlay--12-img3 {
+  top: 76%;
+}
+
+.section-overlay--13-txt {
+  top: 30%;
+  left: -4%;
+  --overlay-width: 65.7%;
+}
+
+.section-overlay--14-img1,
+.section-overlay--15-img1,
+.section-overlay--16-img1 {
+  left: 0;
+  --overlay-width: 100%;
+}
+
+.section-overlay--14-img1 {
+  top: 39%;
+}
+
+.section-overlay--15-img1 {
+  top: 0;
+}
+
+.section-overlay--16-img1 {
+  top: 0;
+  z-index: 1;
+}
+
+.image-section--16 {
+  z-index: 2;
+  isolation: isolate;
+}
+
+.image-section--17 {
+  z-index: 1;
+  isolation: isolate;
+}
+
+.image-section--17 > img:first-child {
+  position: relative;
+  z-index: 0;
+}
+
+.section-overlay--dakara {
+  top: 91.7%;
+  left: 0;
+  --overlay-width: 34%;
+  z-index: 4;
+}
+
+.section-overlay--moisture {
+  top: 75.2%;
+  left: -3%;
+  --overlay-width: 18%;
+  z-index: 3;
+  animation: surface-tension-pulse 5.4s cubic-bezier(0.22, 0.61, 0.36, 1) -0.8s infinite;
+  transform-origin: 50% 68%;
+  will-change: transform;
+}
+
+.section-overlay--moisture-b {
+  top: 85.6%;
+  right: -2%;
+  --overlay-width: 25%;
+  z-index: 3;
+  animation: surface-tension-pulse 6.1s cubic-bezier(0.22, 0.61, 0.36, 1) -2.4s infinite;
+  transform-origin: 50% 68%;
+  will-change: transform;
+}
+
+.section-overlay--17-txt {
+  top: 8%;
+  left: -3%;
+  --overlay-width: 58.7%;
+  z-index: 5;
+}
+
+
+.section-overlay--18-txt{
+--overlay-width: 74.9%;
+left: 5%;
+top:7%
+}
+
+.section-overlay--21-txt{
+--overlay-width: 38.9%;
+left: -1%;
+top:35%
+}
+
+.section-overlay--22-txt{
+--overlay-width: 13.4%;
+right: 4%;
+top:0%
+}
+
+.section-overlay--23-txt{
+--overlay-width: 13.2%;
+left: 4%;
+top:10%
+}
+
+.section-overlay--24-txt{
+--overlay-width: 88.9%;
+left: 3%;
+top:0%;
+}
+
+.section-overlay--27-txt{
+--overlay-width: 58.5%;
+right: 7.5%;
+top:46%;
+}
+
+.section-overlay--28-txt{
+  --overlay-width: 31%%;
+  left: 0%;
+  top:11%
+}
+
+.image-section--fv .fv-copy {
+  position: absolute;
+  top: 20.25%;
+  left: 67%;
+  width: 30.5%;
+  opacity: 0;
+  transform: translate3d(0, clamp(24px, 5vw, 42px), 0);
+  transition:
+    opacity 1.5s ease-out 250ms,
+    transform 1.8s cubic-bezier(0.22, 1, 0.36, 1) 250ms;
+  will-change: opacity, transform;
+}
+
+.image-section--fv .fv-copy.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@keyframes surface-tension-pulse {
+  0%,
+  42%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  51% {
+    transform: translate3d(0, 0.7%, 0) scale(1.04, 0.97);
+  }
+
+  61% {
+    transform: translate3d(0, -0.6%, 0) scale(0.985, 1.035);
+  }
+
+  71% {
+    transform: translate3d(0, 0.3%, 0) scale(1.018, 0.986);
+  }
+
+  81% {
+    transform: translate3d(0, -0.16%, 0) scale(0.994, 1.012);
+  }
+
+  91% {
+    transform: translate3d(0, 0.06%, 0) scale(1.004, 0.997);
+  }
+}
+
+@keyframes soft-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-0.15deg);
+  }
+
+  50% {
+    transform: translate3d(0, -2.2%, 0) rotate(0.2deg);
+  }
+}
+
+@keyframes cta-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -7%, 0);
+  }
 }
 
 .purchase-button {
@@ -156,11 +532,18 @@ a {
 .campaign-cta {
   position: absolute;
   z-index: 2;
-  bottom: 5%;
+  bottom: var(--campaign-cta-bottom);
   left: 6.65%;
   display: block;
   width: 86.7%;
+  animation: cta-float 3s ease-in-out infinite;
   transition: opacity 180ms ease, transform 180ms ease;
+  will-change: transform;
+}
+
+.image-section--17 .campaign-cta,
+.image-section--24 .campaign-cta {
+  bottom: var(--campaign-cta-bottom-tight);
 }
 
 .campaign-cta img {
@@ -301,6 +684,30 @@ a {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .image-section--fv .fv-copy {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .section-overlay.scroll-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .section-overlay--09-m1,
+  .section-overlay--09-m2,
+  .section-overlay--moisture-s,
+  .section-overlay--moisture-l,
+  .section-overlay--moisture,
+  .section-overlay--moisture-b,
+  .section-overlay--10-m,
+  .campaign-cta {
+    transform: none;
+    animation: none;
   }
 
   .purchase-button,
