@@ -360,10 +360,10 @@ right: 7.5%;
 top:46%;
 }
 
-.section-overlay--28-txt{
-  --overlay-width: 31%%;
-  left: 0%;
-  top:11%
+.section-overlay--28-txt {
+  top: 11%;
+  left: 0;
+  --overlay-width: 31%;
 }
 
 .image-section--fv .fv-copy {
